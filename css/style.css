@@ -1,0 +1,3367 @@
+
+*, ::before, ::after {
+    font-family: 'Exo'; 
+    padding: 0; 
+    margin: 0; 
+    box-sizing: border-box; 
+    text-decoration: none; 
+    list-style: none; 
+}
+
+body{
+    width: 100%; 
+    height: 100vh; 
+    background-color: black;
+}
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+
+    header {
+        width: 100%;
+    }
+    
+    header nav ul li a {
+        color: white; 
+        font-size: 1em;
+        opacity: 1;        
+    }
+
+    header nav ul li a:hover {
+        opacity: .5; 
+        transition: opacity .5s ease-in-out; 
+    }
+    header nav ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-around; 
+        align-items: center;
+        flex-wrap: wrap; 
+    }
+
+    header nav  {
+        width: 100%;
+        height: 100vh;
+        background-image: url('../assets/img/header.jpg'); 
+        background-size: cover; 
+        position: relative;
+    }
+
+    .nav-info {
+        width: 100%; 
+        position: absolute;
+        z-index: 5; 
+        display: flex; 
+        justify-content: flex-start; 
+        align-items: center;
+    }
+    .nav-info h1, .nav-info p {
+        color: white; 
+        text-shadow: 1px 1px 2px black; 
+    }
+    .info h1{
+        font-size: 2em;
+        margin-bottom: 1em;
+    }
+
+    .info p {
+        font-size: 1.5em; 
+    
+    }
+    .info {
+        text-align: left;
+        margin-left: 5em;
+        width: 50%; 
+    }
+
+    .info .btn {
+        border: 2px solid white; 
+        box-shadow: 1px 1px 3px black; 
+        text-shadow: 1px 1px 2px black; 
+        background: none; 
+        margin-top: 1em; 
+        padding: .5em 1.5em; 
+        border-radius: 50px; 
+        position: relative; 
+        overflow: hidden;
+        color: white;
+        cursor: pointer;
+        transition: .8s; 
+        font-size: 1.5em;
+
+    }
+
+    .info .btn::before {
+        content: ''; 
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0; 
+        width: 100%; 
+        height: 0%;
+        background-color: rgba(255, 255, 255, 0.5); 
+        transition: .8s;
+        border-radius: 0 0 50% 50%; 
+    }
+
+    .info .btn:hover::before {
+        height: 180%;
+    }
+    .info-1 {
+        position: relative; 
+    }
+    .info-2 {
+        position: absolute; 
+        left: 0; 
+        opacity: 0;
+    }
+
+    .animate {
+        position: absolute;
+        left: 0; 
+        top:0; 
+        animation: fadein .8s ease-in;
+    }
+    @keyframes fadein{
+        from {
+            
+        opacity: 0;
+            top: 50px;
+        }
+        to {
+            
+            opacity: 1;
+            top: 0;
+        }
+    }
+
+    .logo img {
+        margin: 1em 0 1em -4em;
+        width: 200px; 
+        height: 100px; 
+    }
+    
+    .planets-menu {
+        position: relative;
+    }
+    .sub-menu {
+        position: absolute; 
+        z-index: 10;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .5s ease-in-out;
+        display: flex;
+    }
+    .sub-menu:hover {
+        display: flex;
+    }
+    
+    .sub-menu li a{
+        display: block;
+        text-align: center;
+        width: 8em; 
+        background-color: rgba(255, 254, 254, 0.3);
+        padding: .3em .5em;
+        transition: all .3s ease-in-out;
+    }
+
+    .sub-menu li a:hover {
+        opacity: .9;
+        color: rgb(59, 59, 59);
+    }
+
+    /*clase agregada en js*/
+    .show {
+        opacity: 1;
+        visibility: visible; 
+    }
+
+    .menu-list {
+        transition: left .4s ease; 
+        display: flex; 
+        justify-content: space-around; 
+        align-items: center; 
+    }
+
+    .menu-list li {
+        margin: 0 1.5em;
+    }
+
+    .menu-list > li:nth-child(2) > a {
+        color: deepskyblue; 
+    }
+
+     /*People section*/
+    
+     .people{
+        width: 100%;
+        height: 40em; 
+        position: relative;
+        margin: 2.5em auto;
+        overflow: hidden; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column; 
+        flex-wrap: wrap; 
+    }    
+
+    .person {
+        margin-top: 2em;
+        width: 50%; 
+    
+    }
+
+    .person-1-content {
+        width: 100%; 
+        margin: 0 auto;
+        display: flex; 
+        justify-content: flex-start; 
+        align-items: center; 
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        transition: left .5s ease-in-out; 
+    }
+
+    .person-2-content {
+        width: 100%; 
+        margin: 0 auto;
+        display: flex; 
+        justify-content: flex-start; 
+        align-items: center; 
+        flex-direction: column;
+        position: absolute;
+        transition: left .7s ease;  
+        left: 100%;
+    }
+
+
+
+    .people .woman  {
+        display: flex; 
+        justify-content: flex-start; 
+        align-items: center; 
+        width: 75%;
+    }
+
+    .people .woman > .description {
+        text-align: right; 
+    }
+
+    .people .man   {
+        display: flex; 
+        justify-content: flex-end; 
+        flex-direction: row-reverse; 
+        align-items: center; 
+        width: 75%;
+    }
+
+    .people .man > .description {
+        text-align: left; 
+    }
+
+    .profile-info {
+        text-align: center;
+    }
+
+    .fondo-people {
+        height: 50em;
+        width: 100vw;
+        background-image: url('../assets/img/fondoSpace.jpg');
+        background-repeat: no-repeat; 
+        background-size: cover; 
+        position: fixed;
+        top: 0;
+        z-index: -10;
+    }
+    .people h1 {
+        color: white;
+        font-size: 1.5em;
+        position: absolute; 
+        top: 2em; 
+        
+    }
+    
+    .person p{
+        color: white;
+        margin: 1em auto; 
+    }
+    
+    .person .description {
+        font-weight: 300;
+        font-size: 1em;
+        width: 80%;
+        text-align: center;
+        font-style: italic;
+    }
+
+    .people .person .person-man {
+
+        background-image: url('../assets/img/men3.jpg');
+    }
+
+    .people .person .person-woman {
+
+        background-image: url('../assets/img/woman2.jpg');
+    }
+    .people .person .person-man, .people .person .person-woman  {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%; 
+        background-repeat: no-repeat; 
+        background-size: 150px 150px;  
+    }
+
+    .arrows {
+        width: 35%; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        margin: 1em auto; 
+        position: absolute; 
+        bottom: 2em;
+    }
+    
+    .arrows .right-arrow, .arrows .left-arrow  {
+        width:100px; 
+        height: 50px;
+        background-image: url('../assets/next.svg'); 
+        background-repeat: no-repeat; 
+        background-size: 100px 50px;  
+        cursor: pointer;
+        transition: all .9s ease-in-out; 
+        position: absolute; 
+        
+    }
+    
+    .arrows .left-arrow {
+        left: 1em; 
+        transform: rotate(-180deg); 
+    }
+
+    .arrows .right-arrow {
+        right: 1em; 
+    }
+    .arrows > .right-arrow:hover  {
+       right: -.1em;
+    }
+    .arrows > .left-arrow:hover  {
+        left: -.1em;
+    }
+
+    /* Planets section*/
+
+    .planets {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        width: 100%;
+        background-color: black;
+        overflow: hidden;
+    }
+    .fondoPlanets {
+        width: 100%; 
+        height: 30em;
+        position: relative; 
+        background-image: url('../assets/img/fondoPlanets.jpg'); 
+        background-repeat: no-repeat; 
+        background-position: center; 
+        background-size: 100vw 30em; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        text-align: center;  
+    }
+    .planets h1 {
+        margin: 2.5em auto;
+        font-size: 3em;
+        color: rgb(1, 1, 54);
+        position: absolute; 
+        top: 1em;
+        left: 40%;
+        text-shadow: 1px 1px 1px white; 
+    }
+    .mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune, .pluto{
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 1em;
+        overflow: hidden; 
+    }
+
+    .mercury .description-planet, .earth .description-planet, .jupiter .description-planet, .uranus .description-planet, .pluto .description-planet   {
+        text-align: right;
+    }
+
+    .venus .description-planet, .mars .description-planet, .saturn .description-planet, .neptune .description-planet  {
+        text-align: left;
+    }
+
+    .planet-name {
+        margin-top: 1em; 
+        margin-bottom: 1em;
+        color: white;
+        font-weight: 300;
+        font-size: 2em; 
+    }
+   
+
+    .mercury .planet-info, .earth .planet-info, .jupiter .planet-info, .uranus .planet-info, .pluto .planet-info {
+        display: flex; 
+        justify-content: space-around; 
+        align-items: center; 
+        width: 100%;
+    }
+
+    .venus .planet-info, .mars .planet-info, .saturn .planet-info, .neptune .planet-info {
+        display: flex; 
+        justify-content: space-around; 
+        align-items: center; 
+        flex-direction: row-reverse; 
+        width: 100%;
+    }
+
+    .mercury .planet-info .planet-mercury, .earth .planet-info .planet-earth, .jupiter .planet-info .planet-jupiter, .uranus .planet-info .planet-uranus,.pluto .planet-info .planet-pluto{
+        transition: margin .5s ease-in; 
+        margin-left: -15em;
+    }
+
+    .venus .planet-info .planet-venus, .mars .planet-info .planet-mars, .saturn .planet-info .planet-saturn, .neptune .planet-info .planet-neptune {
+        transition: margin .5s ease-in; 
+        margin-right: -15em;
+    }
+
+    .planet-mercury {
+        background-image: url('../assets/img/mercury-circle.png'); 
+    }
+    .planet-venus {
+        background-image: url('../assets/img/venus-circle.png'); 
+    }
+    .planet-earth {
+        background-image: url('../assets/img/earth-circle.png'); 
+    }
+    .planet-mars {
+        background-image: url('../assets/img/mars-circle.png'); 
+    }
+    .planet-jupiter {
+        background-image: url('../assets/img/jupiter-circle.png'); 
+    }
+    .planet-saturn {
+        background-image: url('../assets/img/saturn-circle.png'); 
+    }
+    .planet-uranus {
+        background-image: url('../assets/img/uranus-circle.png'); 
+    }
+    .planet-neptune {
+        background-image: url('../assets/img/neptune-circle.png'); 
+    }
+    .planet-pluto {
+        background-image: url('../assets/img/pluto-circle.png'); 
+    }
+    .planet-picture {
+        width: 400px; 
+        height: 400px;
+        background-size: 400px 400px; 
+        background-repeat: no-repeat; 
+    }
+
+    .description-planet {
+        color: white; 
+        font-weight: 300;
+        font-size: 1.2em;
+        width: 70%;
+       
+    }
+
+    /*Journey Section*/
+    .journey {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        width: 100%;
+        background-color: black;
+
+    }
+    .journey h3 {
+        color: white;
+        text-align: center;
+        width: 80%; 
+        font-size: 1.5em;
+        margin: 1.5em auto;
+    }
+    .icon-rocket {
+        margin-bottom: 1.5em;
+        width: 150px; 
+        height: 100px;
+        background-image: url('../assets/rocket-launch.svg'); 
+        background-repeat: no-repeat; 
+        background-size: 150px 100px; 
+        transform: rotate(30deg);
+    }
+
+    .container-img-journey {
+        width: 90%; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .img-journey-1 {
+        background-image: url('../assets/img/j-1.jpg'); 
+    }
+    .img-journey-2 {
+        background-image: url('../assets/img/j-2.jpg'); 
+    }
+    .img-journey-3 {
+        background-image: url('../assets/img/j-3.jpg'); 
+    }
+    .img-journey-4 {
+        background-image: url('../assets/img/j-4.jpg'); 
+    }
+
+    .img-journey-1, .img-journey-2, .img-journey-3, .img-journey-4 {
+        cursor: pointer;
+        margin: 1.5em auto; 
+        width: 500px; 
+        height: 300px;
+        background-repeat: no-repeat; 
+        background-size: 500px 300px; 
+        overflow: hidden; 
+        position: relative;
+    }
+    .cover-1 {
+        width: 500px; 
+        height: 300px;
+        transition: background .5s ease-in-out;
+        position: relative;  
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column; 
+        font-size: 1.5em; 
+        color: transparent; 
+        font-weight: bold; 
+        transition: all .5s ease-in-out; 
+    }
+    .cover-1 > a.credit-card {
+        color: black;
+        opacity: 0; 
+        transition: all .5s ease-in-out; 
+        display: block;
+        width: 80px; 
+        height: 80px;
+        background-image: url('../assets/credit-cards.svg'); 
+        background-size: 80px 80px; 
+        background-repeat: no-repeat; 
+    }
+
+    .cover-1 > a.time {
+        color: black;
+        opacity: 0; 
+        transition: all .5s ease-in-out; 
+        display: block;
+        width: 80px; 
+        height: 80px;
+        background-image: url('../assets/time.svg'); 
+        background-size: 80px 80px; 
+        background-repeat: no-repeat; 
+    }
+
+
+    .cover-1:hover  {
+        color: black; 
+    }
+    .cover-1:hover a {
+        opacity: 1; 
+    }
+    .cover-1:hover {
+        background-color: rgba(255, 255, 255, .7); 
+    }
+
+    .btn {
+        border: 2px solid white; 
+        background: none; 
+        padding: 1.5em 4em; 
+        margin-top: 2em; 
+        border-radius: 50px; 
+        position: relative; 
+        overflow: hidden;
+        color: white;
+        cursor: pointer;
+        transition: .8s; 
+    }
+
+    .btn::before {
+        content: ''; 
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0; 
+        width: 100%; 
+        height: 0%;
+        background-color: rgba(255, 255, 255, 0.5); 
+        transition: .8s;
+        border-radius: 0 0 50% 50%; 
+    }
+
+    .btn:hover::before {
+        height: 180%;
+    }
+
+    /*Gallery Section*/
+    .gallery {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        width: 100%;
+        background-color: black;
+       
+    }
+
+    .icon-telescope {
+        margin: 5em auto;
+        width: 100px; 
+        height: 100px;
+        background-image: url('../assets/telescope.svg'); 
+        background-repeat: no-repeat; 
+        background-size: 100px 100px; 
+     
+    }
+    .gallery h3 {
+        color: white; 
+        text-align: center;
+        width: 80%; 
+        font-size: 2em;
+        margin-bottom: 2em;
+    }
+
+    .content-gallery {
+        width: 50%;
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-wrap: wrap;
+    }
+
+    .content-gallery img:nth-child(1) {
+        width: 100%;
+    }
+
+    .content-gallery img:nth-child(2), .content-gallery img:nth-child(3)  {
+        width: 100%;
+    }
+
+    /*Sponsor section*/
+    .sponsor {
+        background-color: white; 
+        width: 100%; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        flex-direction: column;
+    }
+    .sponsor-content {
+        width: 90%; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center;
+        margin: 1.5em auto;
+    }
+    .sponsor-content > * {
+        margin: auto .5em;
+
+        filter: grayscale(1);
+        transition: all .3s ease-in-out; 
+    }
+
+    .sponsor-content > *:hover {
+        filter: grayscale(.2); 
+    }
+    .nasa {
+        width: 140px; 
+        height: 120px; 
+        background-image: url('../assets/img/nasa-2.png'); 
+        background-repeat: no-repeat; 
+        background-size: 140px 120px; 
+        margin-bottom: 1em;
+    }
+
+    .esa {
+        width: 180px; 
+        height: 120px; 
+        background-image: url('../assets/img/esa.png'); 
+        background-repeat: no-repeat; 
+        background-size: 180px 120px; 
+        margin-bottom: 1em;
+    }
+
+    .russia {
+        width: 100px; 
+        height: 120px; 
+        background-image: url('../assets/img/roscosmos.png'); 
+        background-repeat: no-repeat; 
+        background-size: 100px 120px; 
+        margin-bottom: 1em;
+    }
+
+    .jaxa {
+        width: 180px; 
+        height: 120px; 
+        background-image: url('../assets/img/jaxa2.png'); 
+        background-repeat: no-repeat; 
+        background-size: 180px 120px; 
+        margin-bottom: 1em;
+    }
+
+    .spacex {
+        margin-top: 2em;
+        width: 140px; 
+        height: 20px; 
+        background-image: url('../assets/img/SpaceX.png'); 
+        background-repeat: no-repeat; 
+        background-size: 140px 20px; 
+    }
+
+    .sponsor h4 {
+        color: black; 
+        text-align: center; 
+        font-size: 2em; 
+        margin: 1em auto; 
+    }
+
+    /*footer*/
+    footer {
+        text-align: center; 
+        background-color: black; 
+        height: 25em; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column; 
+    }
+
+    footer h5 {
+        color: white;
+        background-color: black; 
+
+        font-size: 1.5em; 
+   
+    }
+    footer .icon-content {
+        width: 80%; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        margin: 3em auto; 
+
+    }
+
+    .footer-logo  {
+        width: 35%; 
+        margin-top: 5em; 
+    }
+    .footer-logo img {
+        width: 100%; 
+        height: 5em;
+    }
+
+    .icon-fb {
+        background-image: url('../assets/facebook.svg');    
+    }
+    .icon-insta {
+        background-image: url('../assets/instagram.svg');   
+    }
+    .icon-twitter {
+        background-image: url('../assets/twitter.svg');
+    }
+    .icon-fb, .icon-insta, .icon-twitter {
+        filter: saturate(.1);
+        cursor: pointer;
+        transition: filter .5s ease-in-out; 
+        margin: 1.5em;
+        width: 50px; 
+        height: 50px; 
+        background-repeat: no-repeat; 
+        background-size: 50px 50px; 
+    }
+
+    .icon-fb:hover, .icon-insta:hover, .icon-twitter:hover {
+        filter: saturate(1);
+    }
+    .btn-scroll {
+        width: 50px; 
+        height: 50px;
+        border-radius: 50%; 
+        background-color: white; 
+        background-image: url('../assets/scroll-arrow.svg'); 
+        background-size: 40px 40px; 
+        transform: scale(0); 
+        background-repeat: no-repeat; 
+        background-position: center; 
+        padding: 2em; 
+        position: fixed; 
+        z-index: 100;
+        right: 2em;
+        bottom: 2em; 
+        opacity: .2; 
+        cursor: pointer; 
+        transition: all .3s ease-in; 
+    }
+    
+
+
+}
+  
+
+
+
+
+
+
+
+  /* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+  
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    header {
+        width: 100%;
+    }
+    
+    header nav ul li a {
+        color: white; 
+        font-size: 1em;
+        opacity: 1;        
+    }
+
+    header nav ul li a:hover {
+        opacity: .5; 
+        transition: opacity .5s ease-in-out; 
+    }
+    header nav ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-around; 
+        align-items: center;
+        flex-wrap: wrap; 
+    }
+
+    header nav  {
+        width: 100%;
+        height: 100vh;
+        background-image: url('../assets/img/header.jpg'); 
+        background-size: cover; 
+        position: relative;
+    }
+
+    .nav-info {
+        width: 100%; 
+        position: absolute;
+        z-index: 5; 
+        display: flex; 
+        justify-content: flex-start; 
+        align-items: flex-start;
+    }
+    .nav-info h1, .nav-info p {
+        color: white; 
+        text-shadow: 1px 1px 2px black; 
+    }
+    .info h1{
+        font-size: 2em;
+        margin-bottom: 1em;
+    }
+
+    .info p {
+        font-size: 1.5em; 
+    }
+    .info {
+        text-align: left;
+        margin-left: 5em;
+        width: 50%; 
+    }
+
+    .info .btn {
+        border: 2px solid white;
+        box-shadow: 1px 1px 3px black; 
+        text-shadow: 1px 1px 2px black; 
+        background: none; 
+        margin-top: 1em; 
+        padding: .5em 1.5em; 
+        border-radius: 50px; 
+        position: relative; 
+        overflow: hidden;
+        color: white;
+        cursor: pointer;
+        transition: .8s; 
+        font-size: 1.5em;
+    }
+
+    .info .btn::before {
+        content: ''; 
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0; 
+        width: 100%; 
+        height: 0%;
+        background-color: rgba(255, 255, 255, 0.5); 
+        transition: .8s;
+        border-radius: 0 0 50% 50%; 
+    }
+
+    .info .btn:hover::before {
+        height: 180%;
+    }
+
+    .info-1 {
+        position: relative; 
+    }
+    .info-2 {
+        position: absolute; 
+        left: 0; 
+        opacity: 0;
+    }
+
+    .animate {
+        position: absolute;
+        left: 0; 
+        top:0; 
+        animation: fadein .8s ease-in;
+    }
+    @keyframes fadein{
+        from {
+            
+        opacity: 0;
+            top: 50px;
+        }
+        to {
+            
+            opacity: 1;
+            top: 0;
+        }
+    }
+
+    .logo img {
+        margin: 1em auto;
+        width: 200px; 
+        height: 100px; 
+    }
+    
+    .planets-menu {
+        position: relative;
+    }
+    .sub-menu {
+        position: absolute; 
+        z-index: 10;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .5s ease-in-out;
+        display: flex;
+    }
+    .sub-menu:hover {
+        display: flex;
+    }
+    
+    .sub-menu li a{
+        display: block;
+        text-align: center;
+        width: 8em; 
+        background-color: rgba(255, 254, 254, 0.3);
+        padding: .3em .5em;
+        transition: all .3s ease-in-out;
+    }
+
+    .sub-menu li a:hover {
+        opacity: .9;
+        color: rgb(59, 59, 59);
+    }
+
+    /*clase agregada en js*/
+    .show {
+        opacity: 1;
+        visibility: visible; 
+    }
+
+    .menu-list {
+        transition: left .4s ease; 
+        display: flex; 
+        justify-content: space-around; 
+        align-items: center; 
+    }
+
+    .menu-list li {
+        margin: 0 1.5em;
+    }
+
+    .menu-list > li:nth-child(2) > a {
+        color: deepskyblue; 
+    }
+
+     /*People section*/
+    
+     .people{
+        width: 100%;
+        height: 40em; 
+        position: relative;
+        margin: 2.5em auto;
+        overflow: hidden; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column; 
+        flex-wrap: wrap; 
+    }    
+
+    .person {
+        margin-top: 2em;
+        width: 50%; 
+    
+    }
+
+    .person-1-content {
+        width: 100%; 
+        margin: 0 auto;
+        display: flex; 
+        justify-content: flex-start; 
+        align-items: center; 
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        transition: left .5s ease-in-out; 
+    }
+
+    .person-2-content {
+        width: 100%; 
+        margin: 0 auto;
+        display: flex; 
+        justify-content: flex-start; 
+        align-items: center; 
+        flex-direction: column;
+        position: absolute;
+        transition: left .7s ease;  
+        left: 100%;
+    }
+
+
+
+    .people .woman  {
+        display: flex; 
+        justify-content: flex-start; 
+        align-items: center; 
+        width: 75%;
+    }
+
+    .people .woman > .description {
+        text-align: right; 
+    }
+
+    .people .man   {
+        display: flex; 
+        justify-content: flex-end; 
+        flex-direction: row-reverse; 
+        align-items: center; 
+        width: 75%;
+    }
+
+    .people .man > .description {
+        text-align: left; 
+    }
+
+    .profile-info {
+        text-align: center;
+    }
+
+    .fondo-people {
+        height: 50em;
+        width: 100vw;
+        background-image: url('../assets/img/fondoSpace.jpg');
+        background-repeat: no-repeat; 
+        background-size: cover; 
+        position: fixed;
+        top: 0;
+        z-index: -10;
+    }
+    .people h1 {
+        color: white;
+        font-size: 1.5em;
+        position: absolute; 
+        top: 2em; 
+        
+    }
+    
+    .person p{
+        color: white;
+        margin: 1em auto; 
+    }
+    
+    .person .description {
+        font-weight: 300;
+        font-size: 1em;
+        width: 80%;
+        text-align: center;
+        font-style: italic;
+    }
+
+    .people .person .person-man {
+
+        background-image: url('../assets/img/men3.jpg');
+    }
+
+    .people .person .person-woman {
+
+        background-image: url('../assets/img/woman2.jpg');
+    }
+    .people .person .person-man, .people .person .person-woman  {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%; 
+        background-repeat: no-repeat; 
+        background-size: 150px 150px;  
+    }
+
+    .arrows {
+        width: 35%; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        margin: 1em auto; 
+        position: absolute; 
+        bottom: 2em;
+    }
+    
+    .arrows .right-arrow, .arrows .left-arrow  {
+        width:100px; 
+        height: 50px;
+        background-image: url('../assets/next.svg'); 
+        background-repeat: no-repeat; 
+        background-size: 100px 50px;  
+        cursor: pointer;
+        transition: all .9s ease-in-out; 
+        position: absolute; 
+        
+    }
+    
+    .arrows .left-arrow {
+        left: 1em; 
+        transform: rotate(-180deg); 
+    }
+
+    .arrows .right-arrow {
+        right: 1em; 
+    }
+    .arrows > .right-arrow:hover  {
+       right: -.1em;
+    }
+    .arrows > .left-arrow:hover  {
+        left: -.1em;
+    }
+
+
+    /* Planets section*/
+
+    .planets {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        width: 100%;
+        background-color: black;
+        overflow: hidden;
+
+    }
+
+    .planets h1 {
+        margin: 2.5em auto;
+        font-size: 2em;
+        color: white;
+
+    }
+    .mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune, .pluto{
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 1em;
+        overflow: hidden;
+    }
+
+    .mercury .description-planet, .earth .description-planet, .jupiter .description-planet, .uranus .description-planet, .pluto .description-planet   {
+        text-align: right;
+    }
+
+    .venus .description-planet, .mars .description-planet, .saturn .description-planet, .neptune .description-planet  {
+        text-align: left;
+    }
+
+    .planet-name {
+        margin-top: 1em; 
+        margin-bottom: 1em;
+        color: white;
+        font-weight: 300;
+        font-size: 2em; 
+    }
+
+    .mercury .planet-info, .earth .planet-info, .jupiter .planet-info, .uranus .planet-info, .pluto .planet-info {
+        display: flex; 
+        justify-content: space-around; 
+        align-items: center; 
+        width: 100%;
+    }
+
+    .venus .planet-info, .mars .planet-info, .saturn .planet-info, .neptune .planet-info {
+        display: flex; 
+        justify-content: space-around; 
+        align-items: center; 
+        flex-direction: row-reverse; 
+        width: 100%;
+    }
+
+    .mercury .planet-info .planet-mercury, .earth .planet-info .planet-earth, .jupiter .planet-info .planet-jupiter, .uranus .planet-info .planet-uranus,.pluto .planet-info .planet-pluto{
+        transition: margin .5s ease-in; 
+        margin-left: -15em;
+    }
+
+    .venus .planet-info .planet-venus, .mars .planet-info .planet-mars, .saturn .planet-info .planet-saturn, .neptune .planet-info .planet-neptune {
+        transition: margin .5s ease-in; 
+        margin-right: -15em;
+    }
+
+    .planet-mercury {
+        background-image: url('../assets/img/mercury-circle.png'); 
+    }
+    .planet-venus {
+        background-image: url('../assets/img/venus-circle.png'); 
+    }
+    .planet-earth {
+        background-image: url('../assets/img/earth-circle.png'); 
+    }
+    .planet-mars {
+        background-image: url('../assets/img/mars-circle.png'); 
+    }
+    .planet-jupiter {
+        background-image: url('../assets/img/jupiter-circle.png'); 
+    }
+    .planet-saturn {
+        background-image: url('../assets/img/saturn-circle.png'); 
+    }
+    .planet-uranus {
+        background-image: url('../assets/img/uranus-circle.png'); 
+    }
+    .planet-neptune {
+        background-image: url('../assets/img/neptune-circle.png'); 
+    }
+    .planet-pluto {
+        background-image: url('../assets/img/pluto-circle.png'); 
+    }
+    .planet-picture {
+        width: 400px; 
+        height: 400px;
+        background-size: 400px 400px; 
+        background-repeat: no-repeat; 
+    }
+
+    .description-planet {
+        color: white; 
+        font-weight: 300;
+        font-size: 1.2em;
+        width: 70%;
+    }
+
+    /*Journey Section*/
+    .journey {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        width: 100%;
+        background-color: black;
+
+    }
+    .journey h3 {
+        color: white;
+        text-align: center;
+        width: 80%; 
+        font-size: 1.5em;
+        margin: 1.5em auto;
+    }
+    .icon-rocket {
+        margin-bottom: 1.5em;
+        width: 150px; 
+        height: 100px;
+        background-image: url('../assets/rocket-launch.svg'); 
+        background-repeat: no-repeat; 
+        background-size: 150px 100px; 
+        transform: rotate(30deg);
+    }
+
+    .container-image-journey {
+        width: 90%; 
+        justify-content: center; 
+        align-items: center;
+        flex-direction: column; 
+    }
+    .img-journey-1 {
+        background-image: url('../assets/img/j-1.jpg'); 
+    }
+    .img-journey-2 {
+        background-image: url('../assets/img/j-2.jpg'); 
+    }
+    .img-journey-3 {
+        background-image: url('../assets/img/j-3.jpg'); 
+    }
+    .img-journey-4 {
+        background-image: url('../assets/img/j-4.jpg'); 
+    }
+
+    .img-journey-1, .img-journey-2, .img-journey-3, .img-journey-4 {
+        cursor: pointer;
+        margin: 1.5em auto; 
+        width: 500px; 
+        height: 300px;
+        background-repeat: no-repeat; 
+        background-size: 500px 300px; 
+        overflow: hidden; 
+        position: relative;
+    }
+    .cover-1 {
+        width: 500px; 
+        height: 300px;
+        transition: background .5s ease-in-out;
+        position: relative;  
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column; 
+        font-size: 1.5em; 
+        color: transparent; 
+        font-weight: bold; 
+        transition: all .5s ease-in-out; 
+    }
+    .cover-1 > a.credit-card {
+        color: black;
+        opacity: 0; 
+        transition: all .5s ease-in-out; 
+        display: block;
+        width: 80px; 
+        height: 80px;
+        background-image: url('../assets/credit-cards.svg'); 
+        background-size: 80px 80px; 
+        background-repeat: no-repeat; 
+    }
+
+    .cover-1 > a.time {
+        color: black;
+        opacity: 0; 
+        transition: all .5s ease-in-out; 
+        display: block;
+        width: 80px; 
+        height: 80px;
+        background-image: url('../assets/time.svg'); 
+        background-size: 80px 80px; 
+        background-repeat: no-repeat; 
+    }
+
+
+    .cover-1:hover  {
+        color: black; 
+    }
+    .cover-1:hover a {
+        opacity: 1; 
+    }
+    .cover-1:hover {
+        background-color: rgba(255, 255, 255, .7); 
+    }
+
+    .btn {
+        border: 2px solid white; 
+        background: none; 
+        padding: 1em 2em; 
+        border-radius: 50px; 
+        position: relative; 
+        overflow: hidden;
+        color: white;
+        cursor: pointer;
+        transition: .8s; 
+    }
+
+    .btn::before {
+        content: ''; 
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0; 
+        width: 100%; 
+        height: 0%;
+        background-color: rgba(255, 255, 255, 0.5); 
+        transition: .8s;
+        border-radius: 0 0 50% 50%; 
+    }
+
+    .btn:hover::before {
+        height: 180%;
+    }
+
+    /*Gallery Section*/
+    .gallery {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        width: 100%;
+        background-color: black;
+    }
+
+    .icon-telescope {
+        margin: 3em auto;
+        width: 100px; 
+        height: 100px;
+        background-image: url('../assets/telescope.svg'); 
+        background-repeat: no-repeat; 
+        background-size: 100px 100px; 
+     
+    }
+    .gallery h3 {
+        color: white; 
+        text-align: center;
+        width: 80%; 
+        font-size: 2em;
+        margin-bottom: 2em;
+    }
+
+    .content-gallery {
+        width: 50%;
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-wrap: wrap;
+    }
+
+    .content-gallery img:nth-child(1) {
+        width: 100%;
+    }
+
+    .content-gallery img:nth-child(2), .content-gallery img:nth-child(3)  {
+        width: 100%;
+    }
+
+    /*Sponsor section*/
+    .sponsor {
+        background-color: white; 
+        width: 100%; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        flex-direction: column;
+    }
+    .sponsor-content {
+        width: 90%; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center;
+        margin: 1.5em auto;
+    }
+    .sponsor-content > * {
+        margin: auto .5em;
+
+        filter: grayscale(1);
+        transition: all .3s ease-in-out; 
+    }
+
+    .sponsor-content > *:hover {
+        filter: grayscale(.2); 
+    }
+    .nasa {
+        width: 140px; 
+        height: 120px; 
+        background-image: url('../assets/img/nasa-2.png'); 
+        background-repeat: no-repeat; 
+        background-size: 140px 120px; 
+        margin-bottom: 1em;
+    }
+
+    .esa {
+        width: 180px; 
+        height: 120px; 
+        background-image: url('../assets/img/esa.png'); 
+        background-repeat: no-repeat; 
+        background-size: 180px 120px; 
+        margin-bottom: 1em;
+    }
+
+    .russia {
+        width: 100px; 
+        height: 120px; 
+        background-image: url('../assets/img/roscosmos.png'); 
+        background-repeat: no-repeat; 
+        background-size: 100px 120px; 
+        margin-bottom: 1em;
+    }
+
+    .jaxa {
+        width: 180px; 
+        height: 120px; 
+        background-image: url('../assets/img/jaxa2.png'); 
+        background-repeat: no-repeat; 
+        background-size: 180px 120px; 
+        margin-bottom: 1em;
+    }
+
+    .spacex {
+        margin-top: 2em;
+        width: 140px; 
+        height: 20px; 
+        background-image: url('../assets/img/SpaceX.png'); 
+        background-repeat: no-repeat; 
+        background-size: 140px 20px; 
+    }
+
+    .sponsor h4 {
+        color: black; 
+        text-align: center; 
+        font-size: 2em; 
+        margin: 1em auto; 
+    }
+
+    /*footer*/
+    footer {
+        text-align: center; 
+        background-color: black; 
+        height: 25em; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column; 
+    }
+
+    footer h5 {
+        color: white;
+        background-color: black; 
+        padding-bottom: 1em;
+        font-size: 1em; 
+   
+    }
+    footer .icon-content {
+        width: 80%; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        margin: 3em auto; 
+
+    }
+
+    .footer-logo  {
+        width: 35%; 
+        margin-top: 5em; 
+    }
+    .footer-logo img {
+        width: 100%; 
+        height: 5em;
+    }
+
+    .icon-fb {
+        background-image: url('../assets/facebook.svg');    
+    }
+    .icon-insta {
+        background-image: url('../assets/instagram.svg');   
+    }
+    .icon-twitter {
+        background-image: url('../assets/twitter.svg');
+    }
+    .icon-fb, .icon-insta, .icon-twitter {
+        filter: saturate(.1);
+        cursor: pointer;
+        transition: filter .5s ease-in-out; 
+        margin: 1.5em;
+        width: 50px; 
+        height: 50px; 
+        background-repeat: no-repeat; 
+        background-size: 50px 50px; 
+    }
+
+    .icon-fb:hover, .icon-insta:hover, .icon-twitter:hover {
+        filter: saturate(1);
+    }
+
+    .btn-scroll {
+        width: 50px; 
+        height: 50px;
+        border-radius: 50%; 
+        background-color: white; 
+        background-image: url('../assets/scroll-arrow.svg'); 
+        background-size: 40px 40px; 
+        transform: scale(0); 
+        background-repeat: no-repeat; 
+        background-position: center; 
+        padding: 2em; 
+        position: fixed; 
+        z-index: 100;
+        right: 2em;
+        bottom: 2em; 
+        opacity: .2; 
+        cursor: pointer; 
+        transition: all .3s ease-in; 
+    }
+    
+
+    
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  /* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    
+    header {
+        width: 100%;
+    }
+    
+    header nav ul li a {
+        color: white; 
+        font-size: 1em;
+        opacity: 1;        
+    }
+
+    header nav ul li a:hover {
+        opacity: .5; 
+        transition: opacity .5s ease-in-out; 
+    }
+    header nav ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-around; 
+        align-items: center;
+        flex-wrap: wrap; 
+    }
+
+
+    header nav  {
+        width: 100%;
+        height: 100vh;
+        background-image: url('../assets/img/header.jpg'); 
+        background-size: cover; 
+    }
+
+    .nav-info {
+        display: none; 
+    }
+
+    .logo img {
+        margin: 1em auto;
+        width: 200px; 
+        height: 100px; 
+    }
+    
+    .planets-menu {
+        position: relative;
+    }
+    .sub-menu {
+        position: absolute; 
+        opacity: 0;
+        visibility: hidden;
+        transition: all .5s ease-in-out;
+        display: flex;
+    }
+    .sub-menu:hover {
+        display: flex;
+    }
+    
+    .sub-menu li a{
+        display: block;
+        text-align: center;
+        width: 8em; 
+        background-color: rgba(255, 254, 254, 0.3);
+        padding: .3em .5em;
+        transition: all .3s ease-in-out;
+    }
+
+    .sub-menu li a:hover {
+        opacity: .9;
+        color: rgb(59, 59, 59);
+    }
+
+    /*clase agregada en js*/
+    .show {
+        opacity: 1;
+        visibility: visible; 
+    }
+
+    .menu-list {
+        transition: left .4s ease; 
+        display: flex; 
+        justify-content: space-around; 
+        align-items: center; 
+    }
+
+    .menu-list li {
+        margin: 0 1.5em;
+    }
+
+    .menu-list > li:nth-child(2) > a {
+        color: deepskyblue; 
+    }
+
+    /*People section*/
+    
+    .people, .person {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        width: 100%;
+        position: relative;
+        margin: 2.5em auto;
+    }    
+
+
+    .fondo-people {
+        height: 50em;
+        width: 100vw;
+        background-image: url('../assets/img/fondoSpace.jpg');
+        background-repeat: no-repeat; 
+        background-size: cover; 
+        position: fixed;
+        top: 0;
+        z-index: -10;
+    }
+    .people h1 {
+        color: white;
+        font-size: 1.5em;
+    }
+    .person {
+        margin-top: 2em;
+    }
+    .person p{
+        color: white;
+        margin: 1em auto; 
+    }
+    
+    .person .description {
+        font-weight: 300;
+        font-size: 1em;
+        width: 80%;
+        text-align: center;
+        font-style: italic;
+    }
+
+    .person-2-content {
+        display: none; 
+    }
+
+    .profile-info {
+        text-align: center; 
+    }
+
+    .people .person .person-man {
+
+        background-image: url('../assets/img/men3.jpg');
+    }
+
+    .people .person .person-woman {
+
+        background-image: url('../assets/img/woman2.jpg');
+    }
+    .people .person .person-man, .people .person .person-woman  {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%; 
+        background-repeat: no-repeat; 
+        background-size: 150px 150px;  
+    }
+
+    /* Planets section*/
+
+    .planets {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        width: 100%;
+        background-color: black;
+        overflow: hidden;
+
+    }
+
+    .planets h1 {
+        margin: 2.5em auto;
+        font-size: 2em;
+        color: white;
+    }
+    .mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune, .pluto{
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 1em;
+    }
+
+    .mercury .description-planet, .earth .description-planet, .jupiter .description-planet, .uranus .description-planet, .pluto .description-planet   {
+        text-align: right;
+    }
+
+    .venus .description-planet, .mars .description-planet, .saturn .description-planet, .neptune .description-planet  {
+        text-align: left;
+    }
+
+    .planet-name {
+        margin-top: 1em; 
+        margin-bottom: 1em;
+        color: white;
+        font-weight: 300;
+        font-size: 2em; 
+    }
+
+    .mercury .planet-info, .earth .planet-info, .jupiter .planet-info, .uranus .planet-info, .pluto .planet-info {
+        display: flex; 
+        justify-content: space-around; 
+        align-items: center; 
+        width: 100%;
+    }
+
+    .venus .planet-info, .mars .planet-info, .saturn .planet-info, .neptune .planet-info {
+        display: flex; 
+        justify-content: space-around; 
+        align-items: center; 
+        flex-direction: row-reverse; 
+        width: 100%;
+    }
+
+    .mercury .planet-info .planet-mercury, .earth .planet-info .planet-earth, .jupiter .planet-info .planet-jupiter, .uranus .planet-info .planet-uranus,.pluto .planet-info .planet-pluto{
+        transition: margin .5s ease-in; 
+        margin-left: -15em;
+    }
+
+    .venus .planet-info .planet-venus, .mars .planet-info .planet-mars, .saturn .planet-info .planet-saturn, .neptune .planet-info .planet-neptune {
+        transition: margin .5s ease-in; 
+        margin-right: -15em;
+    }
+
+    .planet-mercury {
+        background-image: url('../assets/img/mercury-circle.png'); 
+    }
+    .planet-venus {
+        background-image: url('../assets/img/venus-circle.png'); 
+    }
+    .planet-earth {
+        background-image: url('../assets/img/earth-circle.png'); 
+    }
+    .planet-mars {
+        background-image: url('../assets/img/mars-circle.png'); 
+    }
+    .planet-jupiter {
+        background-image: url('../assets/img/jupiter-circle.png'); 
+    }
+    .planet-saturn {
+        background-image: url('../assets/img/saturn-circle.png'); 
+    }
+    .planet-uranus {
+        background-image: url('../assets/img/uranus-circle.png'); 
+    }
+    .planet-neptune {
+        background-image: url('../assets/img/neptune-circle.png'); 
+    }
+    .planet-pluto {
+        background-image: url('../assets/img/pluto-circle.png'); 
+    }
+    .planet-picture {
+        width: 400px; 
+        height: 400px;
+        background-size: 400px 400px; 
+        background-repeat: no-repeat; 
+    }
+
+    .description-planet {
+        color: white; 
+        font-weight: 300;
+        font-size: 1.2em;
+        width: 70%;
+    }
+
+    /*Journey Section*/
+    .journey {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        width: 100%;
+        background-color: black;
+
+    }
+    .journey h3 {
+        color: white;
+        text-align: center;
+        width: 80%; 
+        font-size: 1.5em;
+        margin: 1.5em auto;
+    }
+    .icon-rocket {
+        margin-bottom: 1.5em;
+        width: 150px; 
+        height: 100px;
+        background-image: url('../assets/rocket-launch.svg'); 
+        background-repeat: no-repeat; 
+        background-size: 150px 100px; 
+        transform: rotate(30deg);
+    }
+
+    .container-image-journey {
+        width: 90%; 
+        justify-content: center; 
+        align-items: center;
+        flex-direction: column; 
+    }
+    .img-journey-1 {
+        background-image: url('../assets/img/j-1.jpg'); 
+    }
+    .img-journey-2 {
+        background-image: url('../assets/img/j-2.jpg'); 
+    }
+    .img-journey-3 {
+        background-image: url('../assets/img/j-3.jpg'); 
+    }
+    .img-journey-4 {
+        background-image: url('../assets/img/j-4.jpg'); 
+    }
+
+    .img-journey-1, .img-journey-2, .img-journey-3, .img-journey-4 {
+        cursor: pointer;
+        margin: 1.5em auto; 
+        width: 500px; 
+        height: 300px;
+        background-repeat: no-repeat; 
+        background-size: 500px 300px; 
+        overflow: hidden; 
+        position: relative;
+    }
+    .cover-1 {
+        width: 500px; 
+        height: 300px;
+        transition: background .5s ease-in-out;
+        position: relative;  
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column; 
+        font-size: 1.5em; 
+        color: transparent; 
+        font-weight: bold; 
+        transition: all .5s ease-in-out; 
+    }
+    .cover-1 > a.credit-card {
+        color: black;
+        opacity: 0; 
+        transition: all .5s ease-in-out; 
+        display: block;
+        width: 80px; 
+        height: 80px;
+        background-image: url('../assets/credit-cards.svg'); 
+        background-size: 80px 80px; 
+        background-repeat: no-repeat; 
+    }
+
+    .cover-1 > a.time {
+        color: black;
+        opacity: 0; 
+        transition: all .5s ease-in-out; 
+        display: block;
+        width: 80px; 
+        height: 80px;
+        background-image: url('../assets/time.svg'); 
+        background-size: 80px 80px; 
+        background-repeat: no-repeat; 
+    }
+
+
+    .cover-1:hover  {
+        color: black; 
+    }
+    .cover-1:hover a {
+        opacity: 1; 
+    }
+    .cover-1:hover {
+        background-color: rgba(255, 255, 255, .7); 
+    }
+
+    .btn {
+        border: 2px solid white; 
+        background: none; 
+        padding: 1em 2em; 
+        border-radius: 50px; 
+        position: relative; 
+        overflow: hidden;
+        color: white;
+        cursor: pointer;
+        transition: .8s; 
+    }
+
+    .btn::before {
+        content: ''; 
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0; 
+        width: 100%; 
+        height: 0%;
+        background-color: rgba(255, 255, 255, 0.5); 
+        transition: .8s;
+        border-radius: 0 0 50% 50%; 
+    }
+
+    .btn:hover::before {
+        height: 180%;
+    }
+
+
+     /*Gallery Section*/
+     .gallery {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        width: 100%;
+        background-color: black;
+    }
+
+    .icon-telescope {
+        margin: 3em auto;
+        width: 100px; 
+        height: 100px;
+        background-image: url('../assets/telescope.svg'); 
+        background-repeat: no-repeat; 
+        background-size: 100px 100px; 
+     
+    }
+    .gallery h3 {
+        color: white; 
+        text-align: center;
+        width: 80%; 
+        font-size: 2em;
+        margin-bottom: 2em;
+    }
+
+    .content-gallery {
+        width: 100%;
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-wrap: wrap;
+    }
+
+    .content-gallery img:nth-child(1) {
+        width: 100%;
+    }
+
+    .content-gallery img:nth-child(2), .content-gallery img:nth-child(3)  {
+        width: 100%;
+    }
+
+    /*Sponsor section*/
+    .sponsor {
+        background-color: white; 
+        width: 100%; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        flex-direction: column;
+    }
+    .sponsor-content {
+        width: 100%; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center;
+        margin: 1.5em auto;
+    }
+    .sponsor-content > * {
+        margin: auto .5em;
+
+        filter: grayscale(1);
+        transition: all .3s ease-in-out; 
+    }
+
+    .sponsor-content > *:hover {
+        filter: grayscale(.2); 
+    }
+    .nasa {
+        width: 140px; 
+        height: 120px; 
+        background-image: url('../assets/img/nasa-2.png'); 
+        background-repeat: no-repeat; 
+        background-size: 140px 120px; 
+        margin-bottom: 1em;
+    }
+
+    .esa {
+        width: 180px; 
+        height: 120px; 
+        background-image: url('../assets/img/esa.png'); 
+        background-repeat: no-repeat; 
+        background-size: 180px 120px; 
+        margin-bottom: 1em;
+    }
+
+    .russia {
+        width: 100px; 
+        height: 120px; 
+        background-image: url('../assets/img/roscosmos.png'); 
+        background-repeat: no-repeat; 
+        background-size: 100px 120px; 
+        margin-bottom: 1em;
+    }
+
+    .jaxa {
+        width: 180px; 
+        height: 120px; 
+        background-image: url('../assets/img/jaxa2.png'); 
+        background-repeat: no-repeat; 
+        background-size: 180px 120px; 
+        margin-bottom: 1em;
+    }
+
+    .spacex {
+        margin-top: 2em;
+        width: 140px; 
+        height: 20px; 
+        background-image: url('../assets/img/SpaceX.png'); 
+        background-repeat: no-repeat; 
+        background-size: 140px 20px; 
+    }
+
+    .sponsor h4 {
+        color: black; 
+        text-align: center; 
+        font-size: 2em; 
+        margin: 1em auto; 
+    }
+
+    /*footer*/
+    footer {
+        text-align: center; 
+        background-color: black; 
+        height: 25em; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column; 
+    }
+
+    footer h5 {
+        color: white;
+        background-color: black; 
+        padding-bottom: 1em;
+        font-size: 1em; 
+   
+    }
+    footer .icon-content {
+        width: 80%; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        margin: 3em auto; 
+
+    }
+
+    .footer-logo  {
+        width: 35%; 
+        margin-top: 5em; 
+    }
+    .footer-logo img {
+        width: 100%; 
+        height: 5em;
+    }
+
+    .icon-fb {
+        background-image: url('../assets/facebook.svg');    
+    }
+    .icon-insta {
+        background-image: url('../assets/instagram.svg');   
+    }
+    .icon-twitter {
+        background-image: url('../assets/twitter.svg');
+    }
+    .icon-fb, .icon-insta, .icon-twitter {
+        filter: saturate(.1);
+        cursor: pointer;
+        transition: filter .5s ease-in-out; 
+        margin: 1.5em;
+        width: 50px; 
+        height: 50px; 
+        background-repeat: no-repeat; 
+        background-size: 50px 50px; 
+    }
+
+    .icon-fb:hover, .icon-insta:hover, .icon-twitter:hover {
+        filter: saturate(1);
+    }
+
+
+    .btn-scroll {
+        width: 50px; 
+        height: 50px;
+        border-radius: 50%; 
+        background-color: white; 
+        background-image: url('../assets/scroll-arrow.svg'); 
+        background-size: 40px 40px; 
+        transform: scale(0); 
+        background-repeat: no-repeat; 
+        background-position: center; 
+        padding: 2em; 
+        position: fixed; 
+        z-index: 100;
+        right: 2em;
+        bottom: 2em; 
+        opacity: .2; 
+        cursor: pointer; 
+        transition: all .3s ease-in; 
+    }
+    
+  }
+  
+
+
+
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  
+  @media (min-width: 481px) and (max-width: 767px) {
+    
+    
+    header {
+        width: 100%;
+    }
+
+    header nav ul li a {
+        color: white; 
+        font-size: 2em;       
+    }
+    header nav ul {
+        width: 100%;
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        flex-direction: column;
+        
+    }
+    header nav ul li {
+        width: 100%; 
+        text-align: center;
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        position: relative;  
+        padding: .5em 0;
+        opacity: 1;
+    }
+
+    header nav ul li:hover {
+        opacity: .5;
+        transition: opacity .3s ease-in; 
+    }
+
+    .nav-info {
+        display: none; 
+    }
+    .icon-world-menu, .icon-solarsys-menu, .icon-telescope-menu, .icon-meteor-menu {
+        margin-left: .5em;
+        width: 30px; 
+        height: 30px; 
+        background-size: 30px 30px;
+    }
+    .icon-world-menu {
+        background-image: url('../assets/worldwide.svg');
+    }
+    .icon-solarsys-menu {
+        position: relative;
+        display: inline-block;
+        margin-left: .1em;
+        background-image: url('../assets/solar-system.svg');
+    }
+    .icon-telescope-menu {
+        background-image: url('../assets/telescope.svg');
+    }
+
+    .icon-meteor-menu {
+        background-image: url('../assets/meteor.svg');
+    }
+
+    .logo {
+        background-color: black;
+    }
+    .logo img {
+        margin: 1em auto;
+        width: 200px; 
+        height: 100px; 
+    }
+    /*menu animation*/
+    .menu-btn {
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column; 
+        background-color: black; 
+        width: 100%; 
+        height: 15vh;
+    }
+
+    .menu-btn .icon {
+        width: 35px; 
+        height: 4px;
+        background-color: white; 
+        border-radius: 5px;
+        position: relative;
+        transition-delay: .4s;
+    }
+    .menu-btn .icon::before, .menu-btn .icon::after {
+        content: '';
+        width: 35px; 
+        height: 4px;
+        background-color: white; 
+        border-radius: 5px;
+        position: absolute;
+        left: 0; 
+        transition: top .4s .4s, transform .4s 0s; 
+    }
+    .menu-btn .icon::before {
+        top: -15px;
+      
+    }
+    .menu-btn .icon::after {
+        top: 15px;
+    }
+
+    .menu-btn.active .icon {
+        background-color: transparent;
+    }
+
+    .menu-btn.active .icon::before, .menu-btn.active .icon::after {
+        transition: top .4s 0s, transform .4s .4s; 
+    }
+
+    .menu-btn.active .icon::before {
+     
+        top: 0;
+        transform: rotate(-45deg);
+    }
+
+    .menu-btn.active .icon::after {
+      
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    .menu-list {
+        position: relative;
+        width: 100%; 
+        left: 0;
+        transition: left .4s ease; 
+    }
+
+    .hide {
+        left: -100%; 
+        transition: left .4s ease-in-out; 
+    }
+
+    /*end menu animation*/
+    .planets-menu {
+        display: flex;
+        align-items: center; 
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .planets-menu .sub-menu li {
+        padding: .5em 0;
+        margin: .2em 0;
+        background-color: rgba(255, 255, 255, .1); 
+    }
+    .planets-menu a  {
+        color: rgba(255, 255, 255, .4); 
+
+    }
+  
+    .sub-menu li a {
+        color: white;
+    }
+    
+    
+    .division {
+        width: 80%; 
+        height: 2px;
+        background-color: white;
+        margin: 2em auto;
+    }
+
+    /*People section*/
+    
+    .people, .person {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        width: 100%;
+    }    
+    .people h1 {
+        color: white;
+        font-size: 1.5em;
+    }
+    .person {
+        margin-top: 2em;
+    }
+    .person p{
+        color: white;
+        margin: 1em auto; 
+    }
+
+    .person-2-content {
+        display: none; 
+    }
+
+    .profile-info {
+        text-align: center;
+    }
+    
+    .person .description {
+        font-weight: 300;
+        font-size: 1em;
+        width: 80%;
+        text-align: center;
+        font-style: italic;
+    }
+
+    .people .person .person-man {
+
+        background-image: url('../assets/img/men3.jpg');
+    }
+
+    .people .person .person-woman {
+
+        background-image: url('../assets/img/woman2.jpg');
+    }
+    .people .person .person-man, .people .person .person-woman  {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%; 
+        background-repeat: no-repeat; 
+        background-size: 150px 150px;  
+    }
+
+    /* Planets section*/
+
+    .planets {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .planets h1 {
+        color: white;
+    }
+    .mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune, .pluto{
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 1em;
+        overflow: hidden; 
+    }
+    .planet-name {
+        margin-top: 1em; 
+        margin-bottom: 1em;
+        color: white;
+        font-weight: 300; 
+    }
+
+    .planet-mercury {
+        background-image: url('../assets/img/mercury-circle.png'); 
+    }
+    .planet-venus {
+        background-image: url('../assets/img/venus-circle.png'); 
+    }
+    .planet-earth {
+        background-image: url('../assets/img/earth-circle.png'); 
+    }
+    .planet-mars {
+        background-image: url('../assets/img/mars-circle.png'); 
+    }
+    .planet-jupiter {
+        background-image: url('../assets/img/jupiter-circle.png'); 
+    }
+    .planet-saturn {
+        background-image: url('../assets/img/saturn-circle.png'); 
+    }
+    .planet-uranus {
+        background-image: url('../assets/img/uranus-circle.png'); 
+    }
+    .planet-neptune {
+        background-image: url('../assets/img/neptune-circle.png'); 
+    }
+    .planet-pluto {
+        background-image: url('../assets/img/pluto-circle.png'); 
+    }
+
+    .planet-info {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+    }
+
+    .planet-picture {
+        width: 200px; 
+        height: 200px;
+        background-size: 200px 200px; 
+        background-repeat: no-repeat; 
+    }
+
+    .description-planet {
+        color: white; 
+        font-weight: 300;
+        font-size: .8em;
+        width: 70%;
+        text-align: center;
+        margin: 1em auto;
+    }
+
+    
+    /*Journey Section*/
+    .journey {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        width: 100%;
+    }
+    .journey h3 {
+        color: white;
+        text-align: center;
+        width: 80%; 
+        font-size: 1.5em;
+    }
+    .icon-rocket {
+        margin-bottom: 1.5em;
+        width: 150px; 
+        height: 100px;
+        background-image: url('../assets/rocket-launch.svg'); 
+        background-repeat: no-repeat; 
+        background-size: 150px 100px; 
+        transform: rotate(30deg);
+    }
+
+    .container-image-journey {
+        width: 90%; 
+        justify-content: center; 
+        align-items: center;
+        flex-direction: column; 
+    }
+    .img-journey-1 {
+        background-image: url('../assets/img/j-1.jpg'); 
+    }
+    .img-journey-2 {
+        background-image: url('../assets/img/j-2.jpg'); 
+    }
+    .img-journey-3 {
+        background-image: url('../assets/img/j-3.jpg'); 
+    }
+    .img-journey-4 {
+        background-image: url('../assets/img/j-4.jpg'); 
+    }
+
+    .img-journey-1, .img-journey-2, .img-journey-3, .img-journey-4 {
+
+        margin: 1.5em auto; 
+        width: 300px; 
+        height: 200px;
+        background-repeat: no-repeat; 
+        background-size: 300px 200px; 
+    }
+
+    .cover-1 > p {
+        display: none; 
+    }
+
+    .journey button {
+        border: 2px solid white; 
+        padding: 1em 2em; 
+        background-color: transparent; 
+        border-radius: 50px; 
+        color: white;
+    }
+
+    /*Gallery Section*/
+    .gallery {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .icon-telescope {
+        margin-bottom: 1.5em;
+        width: 80px; 
+        height: 100px;
+        background-image: url('../assets/telescope.svg'); 
+        background-repeat: no-repeat; 
+        background-size: 80px 100px; 
+     
+    }
+    .gallery h3 {
+        color: white; 
+        text-align: center;
+        width: 80%; 
+        font-size: 1em;
+        margin-bottom: 2em;
+    }
+
+    .content-gallery {
+        width: 100%;
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-wrap: wrap;
+    }
+
+    .content-gallery img:nth-child(1) {
+        width: 100%;
+    }
+
+    .content-gallery img:nth-child(2), .content-gallery img:nth-child(3)  {
+        width: 100%;
+    }
+
+     /*Sponsor section*/
+     .sponsor {
+        background-color: white; 
+        width: 100%; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .sponsor-content {
+        width: 90%; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        flex-wrap: wrap; 
+    }
+
+    .sponsor-content > *{
+        margin: 2em; 
+    }
+
+    .nasa {
+        width: 150px; 
+        height: 120px; 
+        background-image: url('../assets/img/nasa-2.png'); 
+        background-repeat: no-repeat; 
+        background-size: 150px 120px; 
+     
+    }
+
+    .esa {
+        width: 180px; 
+        height: 120px; 
+        background-image: url('../assets/img/esa.png'); 
+        background-repeat: no-repeat; 
+        background-size: 180px 120px; 
+       
+    }
+
+    .russia {
+        width: 120px; 
+        height: 120px; 
+        background-image: url('../assets/img/roscosmos.png'); 
+        background-repeat: no-repeat; 
+        background-size: 120px 120px; 
+        
+    }
+
+    .jaxa {
+        width: 180px; 
+        height: 120px; 
+        background-image: url('../assets/img/jaxa2.png'); 
+        background-repeat: no-repeat; 
+        background-size: 180px 120px; 
+     
+    }
+
+    .spacex {
+        width: 140px; 
+        height: 20px; 
+        background-image: url('../assets/img/SpaceX.png'); 
+        background-repeat: no-repeat; 
+        background-size: 140px 20px; 
+      
+    }
+
+    .sponsor h4 {
+        color: black; 
+        text-align: center; 
+        font-size: 1em; 
+        margin: 1em auto; 
+    }
+
+    /*footer*/
+    footer {
+        text-align: center; 
+        background-color: black; 
+        height: 25em; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column; 
+    }
+
+    footer h5 {
+        color: white;
+        background-color: black; 
+        padding-bottom: 1em;
+        font-size: 1em; 
+   
+    }
+    footer .icon-content {
+        width: 80%; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        margin: 3em auto; 
+
+    }
+
+    .footer-logo  {
+        width: 35%; 
+        margin-top: 5em; 
+    }
+    .footer-logo img {
+        width: 100%; 
+        height: 5em;
+    }
+
+    .icon-fb {
+        background-image: url('../assets/facebook.svg');    
+    }
+    .icon-insta {
+        background-image: url('../assets/instagram.svg');   
+    }
+    .icon-twitter {
+        background-image: url('../assets/twitter.svg');
+    }
+    .icon-fb, .icon-insta, .icon-twitter {
+        filter: saturate(.1);
+        cursor: pointer;
+        transition: filter .5s ease-in-out; 
+        margin: 1.5em;
+        width: 50px; 
+        height: 50px; 
+        background-repeat: no-repeat; 
+        background-size: 50px 50px; 
+    }
+
+    .icon-fb:hover, .icon-insta:hover, .icon-twitter:hover {
+        filter: saturate(1);
+    }
+
+    .btn-scroll {
+        display: none; 
+    }
+  }
+  
+
+
+
+
+
+
+
+
+
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+
+
+    header {
+        width: 100%;
+    }
+
+    header nav ul li a {
+        color: white; 
+               
+    }
+    header nav ul {
+        width: 100%;
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        flex-direction: column;
+        
+    }
+    header nav ul li {
+        width: 100%; 
+        text-align: center;
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        position: relative;  
+        padding: .5em 0;
+    }
+    .nav-info {
+        display: none; 
+    }
+
+    .icon-world-menu {
+        margin-left: .5em;
+        width: 20px; 
+        height: 20px; 
+        background-image: url('../assets/worldwide.svg');
+        background-size: 20px 20px; 
+    }
+    .icon-solarsys-menu {
+        position: relative;
+        top: 5px;
+        display: inline-block;
+        margin-left: .5em;
+        width: 20px; 
+        height: 20px; 
+        background-image: url('../assets/solar-system.svg');
+        background-size: 20px 20px; 
+    }
+    .icon-telescope-menu {
+        margin-left: .5em;
+        width: 20px; 
+        height: 20px; 
+        background-image: url('../assets/telescope.svg');
+        background-size: 20px 20px; 
+    }
+
+    .icon-meteor-menu {
+        margin-left: .5em;
+        width: 20px; 
+        height: 20px; 
+        background-image: url('../assets/meteor.svg');
+        background-size: 20px 20px; 
+    }
+
+    .logo {
+        background-color: black;
+    }
+    .logo img {
+        margin: 1em auto;
+        width: 100px; 
+        height: 50px; 
+
+    }
+    /*menu animation*/
+    .menu-btn {
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column; 
+        background-color: black; 
+        width: 100%; 
+        height: 15vh;
+    }
+
+    .menu-btn .icon {
+        width: 35px; 
+        height: 4px;
+        background-color: white; 
+        border-radius: 5px;
+        position: relative;
+        transition-delay: .4s;
+    }
+    .menu-btn .icon::before, .menu-btn .icon::after {
+        content: '';
+        width: 35px; 
+        height: 4px;
+        background-color: white; 
+        border-radius: 5px;
+        position: absolute;
+        left: 0; 
+        transition: top .4s .4s, transform .4s 0s; 
+    }
+    .menu-btn .icon::before {
+        top: -15px;
+      
+    }
+    .menu-btn .icon::after {
+        top: 15px;
+    }
+
+    .menu-btn.active .icon {
+        background-color: transparent;
+    }
+
+    .menu-btn.active .icon::before, .menu-btn.active .icon::after {
+        transition: top .4s 0s, transform .4s .4s; 
+    }
+
+    .menu-btn.active .icon::before {
+     
+        top: 0;
+        transform: rotate(-45deg);
+    }
+
+    .menu-btn.active .icon::after {
+      
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    .menu-list {
+        position: relative;
+        width: 100%; 
+        left: 0;
+        transition: left .4s ease; 
+    }
+
+    .hide {
+        left: -100%; 
+        transition: left .4s ease-in-out; 
+    }
+
+    /*end menu animation*/
+
+    .planets-menu {
+        display: flex;
+        align-items: center; 
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .planets-menu .sub-menu li {
+        padding: .5em 0;
+        margin: .2em 0;
+        background-color: rgba(255, 255, 255, .1); 
+    }
+    .planets-menu a  {
+        color: rgba(255, 255, 255, .4); 
+
+    }
+
+    .sub-menu li a {
+        color: white;
+    }
+    
+    
+    
+    .division {
+        width: 80%; 
+        height: 2px;
+        background-color: white;
+        margin: 2em auto;
+    }
+
+    /*People section*/
+    
+    .people, .person {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        width: 100%;
+    }    
+    .people h1 {
+        color: white;
+        font-size: 1em;
+    }
+    .person {
+        margin-top: 2em;
+    }
+    .person p{
+        color: white;
+        margin: 1em auto; 
+    }
+    
+    .person .description {
+        font-weight: 300;
+        font-size: .5em;
+        width: 80%;
+        text-align: center;
+        font-style: italic;
+    }
+
+    .person-2-content {
+        display: none; 
+    }
+
+    .profile-info {
+        text-align: center; 
+    }
+
+    .people .person .person-man {
+
+        background-image: url('../assets/img/men3.jpg');
+    }
+
+    .people .person .person-woman {
+
+        background-image: url('../assets/img/woman2.jpg');
+    }
+    .people .person .person-man, .people .person .person-woman  {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%; 
+        background-repeat: no-repeat; 
+        background-size: 100px 100px;  
+    }
+
+    /* Planets section*/
+
+    .planets {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .planets h1 {
+        color: white;
+    }
+    .mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune, .pluto{
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 1em;
+    }
+    .planet-name {
+        margin-top: 1em; 
+        margin-bottom: 1em;
+        color: white;
+        font-weight: 300; 
+    }
+
+    .planet-mercury {
+        background-image: url('../assets/img/mercury-circle.png'); 
+    }
+    .planet-venus {
+        background-image: url('../assets/img/venus-circle.png'); 
+    }
+    .planet-earth {
+        background-image: url('../assets/img/earth-circle.png'); 
+    }
+    .planet-mars {
+        background-image: url('../assets/img/mars-circle.png'); 
+    }
+    .planet-jupiter {
+        background-image: url('../assets/img/jupiter-circle.png'); 
+    }
+    .planet-saturn {
+        background-image: url('../assets/img/saturn-circle.png'); 
+    }
+    .planet-uranus {
+        background-image: url('../assets/img/uranus-circle.png'); 
+    }
+    .planet-neptune {
+        background-image: url('../assets/img/neptune-circle.png'); 
+    }
+    .planet-pluto {
+        background-image: url('../assets/img/pluto-circle.png'); 
+    }
+    .planet-info {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+    }
+    .planet-picture {
+        width: 200px; 
+        height: 200px;
+        background-size: 200px 200px; 
+        background-repeat: no-repeat; 
+    }
+
+    .description-planet {
+        color: white; 
+        font-weight: 300;
+        font-size: .8em;
+        width: 70%;
+        text-align: center;
+        margin: 1em auto;
+    }
+
+    /*Journey Section*/
+    .journey {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        width: 100%;
+    }
+    .journey h3 {
+        color: white;
+        text-align: center;
+        width: 80%; 
+        font-size: 1em;
+    }
+    .icon-rocket {
+        margin-bottom: 1.5em;
+        width: 100px; 
+        height: 80px;
+        background-image: url('../assets/rocket-launch.svg'); 
+        background-repeat: no-repeat; 
+        background-size: 100px 80px; 
+        transform: rotate(30deg);
+    }
+
+    .container-image-journey {
+        width: 90%; 
+        justify-content: center; 
+        align-items: center;
+        flex-direction: column; 
+    }
+    .img-journey-1 {
+        background-image: url('../assets/img/j-1.jpg'); 
+    }
+    .img-journey-2 {
+        background-image: url('../assets/img/j-2.jpg'); 
+    }
+    .img-journey-3 {
+        background-image: url('../assets/img/j-3.jpg'); 
+    }
+    .img-journey-4 {
+        background-image: url('../assets/img/j-4.jpg'); 
+    }
+
+    .img-journey-1, .img-journey-2, .img-journey-3, .img-journey-4 {
+
+        margin: 1.5em auto; 
+        width: 160px; 
+        height: 100px;
+        background-repeat: no-repeat; 
+        background-size: 160px 100px; 
+    }
+
+    .journey button {
+        border: 2px solid white; 
+        padding: 1em 2em; 
+        background-color: transparent; 
+        border-radius: 50px; 
+        color: white;
+    }
+
+    .cover-1 > p {
+        display: none; 
+    }
+
+    /*Gallery Section*/
+    .gallery {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .icon-telescope {
+        margin-bottom: 1.5em;
+        width: 80px; 
+        height: 100px;
+        background-image: url('../assets/telescope.svg'); 
+        background-repeat: no-repeat; 
+        background-size: 80px 100px; 
+     
+    }
+    .gallery h3 {
+        color: white; 
+        text-align: center;
+        width: 80%; 
+        font-size: 1em;
+        margin-bottom: 2em;
+    }
+
+    .content-gallery {
+        width: 100%;
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-wrap: wrap;
+    }
+
+    .content-gallery img:nth-child(1) {
+        width: 100%;
+    }
+
+    .content-gallery img:nth-child(2), .content-gallery img:nth-child(3)  {
+        width: 100%;
+    }
+
+    /*Sponsor section*/
+    .sponsor {
+        background-color: white; 
+        width: 100%; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .sponsor-content {
+        width: 90%; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        flex-wrap: wrap; 
+    }
+
+    .sponsor-content > *{
+        margin: 1.5em; 
+    }
+
+    .nasa {
+        width: 100px; 
+        height: 80px; 
+        background-image: url('../assets/img/nasa-2.png'); 
+        background-repeat: no-repeat; 
+        background-size: 100px 80px; 
+        margin-bottom: 1em;
+    }
+
+    .esa {
+        width: 120px; 
+        height: 80px; 
+        background-image: url('../assets/img/esa.png'); 
+        background-repeat: no-repeat; 
+        background-size: 120px 80px; 
+        margin-bottom: 1em;
+    }
+
+    .russia {
+        width: 90px; 
+        height: 110px; 
+        background-image: url('../assets/img/roscosmos.png'); 
+        background-repeat: no-repeat; 
+        background-size: 90px 110px; 
+        margin-bottom: 1em;
+    }
+
+    .jaxa {
+        width: 120px; 
+        height: 80px; 
+        background-image: url('../assets/img/jaxa2.png'); 
+        background-repeat: no-repeat; 
+        background-size: 120px 80px; 
+        margin-bottom: 1em;
+    }
+
+    .spacex {
+        width: 140px; 
+        height: 20px; 
+        background-image: url('../assets/img/SpaceX.png'); 
+        background-repeat: no-repeat; 
+        background-size: 140px 20px; 
+     
+    }
+
+    .sponsor h4 {
+        color: black; 
+        text-align: center; 
+        font-size: 1em; 
+        margin: 1em auto; 
+    }
+
+   /*footer*/
+   footer {
+    text-align: center; 
+    background-color: black; 
+    height: 25em; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+    }
+
+    footer h5 {
+        color: white;
+        background-color: black; 
+        padding-bottom: 1em;
+        font-size: 1em; 
+
+    }
+    footer .icon-content {
+        width: 80%; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        margin: 3em auto; 
+
+    }
+
+    .footer-logo  {
+        width: 35%; 
+        margin-top: 5em; 
+    }
+    .footer-logo img {
+        width: 100%; 
+        height: 5em;
+    }
+
+    .icon-fb {
+        background-image: url('../assets/facebook.svg');    
+    }
+    .icon-insta {
+        background-image: url('../assets/instagram.svg');   
+    }
+    .icon-twitter {
+        background-image: url('../assets/twitter.svg');
+    }
+    .icon-fb, .icon-insta, .icon-twitter {
+        filter: saturate(.1);
+        cursor: pointer;
+        transition: filter .5s ease-in-out; 
+        margin: 1.5em;
+        width: 50px; 
+        height: 50px; 
+        background-repeat: no-repeat; 
+        background-size: 50px 50px; 
+    }
+
+    .icon-fb:hover, .icon-insta:hover, .icon-twitter:hover {
+        filter: saturate(1);
+    }
+
+    .btn-scroll {
+        display: none; 
+    }
+    
+
+  }
